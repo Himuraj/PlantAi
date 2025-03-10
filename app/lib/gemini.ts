@@ -7,7 +7,7 @@ const apiKey = process.env.GOOGLE_GEMINI_API_KEY;
 //   throw new Error('GOOGLE_GEMINI_API_KEY is not set in environment variables');
 // }
 
-const genAI = new GoogleGenerativeAI("AIzaSyDlT0-eoTnq_yP-klwvLFiGpv47fWp_gkM");
+const genAI = new GoogleGenerativeAI(apiKey);
 
 export async function identifyPlant(imageBase64: string) {
   try {
