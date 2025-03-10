@@ -3,15 +3,10 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 
 const apiKey = process.env.GOOGLE_GEMINI_API_KEY;
 
-// if (!apiKey) {
-//   throw new Error('GOOGLE_GEMINI_API_KEY is not set in environment variables');
-// }
-
 const genAI = new GoogleGenerativeAI(apiKey);
 
 export async function identifyPlant(imageBase64: string) {
   try {
-    // Update the model to gemini-1.5-flash
     const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
     const prompt = "Identify this plant and provide its name and some important information about it.";
